@@ -15,6 +15,8 @@
 		735F497B28C09AF9006A4569 /* MenuOptionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735F497A28C09AF9006A4569 /* MenuOptionsList.swift */; };
 		735F497D28C0A0B6006A4569 /* MenuItemSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735F497C28C0A0B6006A4569 /* MenuItemSection.swift */; };
 		735F497F28C0B18C006A4569 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735F497E28C0B18C006A4569 /* FoodItem.swift */; };
+		739F603C28C2734700977B63 /* OffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739F603B28C2734700977B63 /* OffsetKey.swift */; };
+		739F603E28C2736600977B63 /* OffsetModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739F603D28C2736600977B63 /* OffsetModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		735F497A28C09AF9006A4569 /* MenuOptionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionsList.swift; sourceTree = "<group>"; };
 		735F497C28C0A0B6006A4569 /* MenuItemSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemSection.swift; sourceTree = "<group>"; };
 		735F497E28C0B18C006A4569 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		739F603B28C2734700977B63 /* OffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetKey.swift; sourceTree = "<group>"; };
+		739F603D28C2736600977B63 /* OffsetModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				735F497A28C09AF9006A4569 /* MenuOptionsList.swift */,
 				735F497C28C0A0B6006A4569 /* MenuItemSection.swift */,
 				735F497E28C0B18C006A4569 /* FoodItem.swift */,
+				739F603B28C2734700977B63 /* OffsetKey.swift */,
+				739F603D28C2736600977B63 /* OffsetModifier.swift */,
 			);
 			path = SwiftUIUberEatsMenu;
 			sourceTree = "<group>";
@@ -152,7 +158,9 @@
 				735F496D28C096F9006A4569 /* ContentView.swift in Sources */,
 				735F497B28C09AF9006A4569 /* MenuOptionsList.swift in Sources */,
 				735F497928C0994D006A4569 /* MenuBarOptions.swift in Sources */,
+				739F603C28C2734700977B63 /* OffsetKey.swift in Sources */,
 				735F497D28C0A0B6006A4569 /* MenuItemSection.swift in Sources */,
+				739F603E28C2736600977B63 /* OffsetModifier.swift in Sources */,
 				735F497F28C0B18C006A4569 /* FoodItem.swift in Sources */,
 				735F496B28C096F9006A4569 /* SwiftUIUberEatsMenuApp.swift in Sources */,
 			);

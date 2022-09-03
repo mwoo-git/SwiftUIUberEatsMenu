@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MenuOptionsList: View {
     @Binding var selectedOption: MenuBarOptions //터치하면 작동
+    @Binding var currentOption: MenuBarOptions //스크롤하면 작동(?)
     @Namespace var animation // 메뉴바 밑의 선이 순간이동 하던 것을 자연스럽게 바꾸기위함 (matchedGeometryEffect)
     
     var body: some View {
@@ -18,10 +19,10 @@ struct MenuOptionsList: View {
                     ForEach(MenuBarOptions.allCases, id: \.self) { item in
                         VStack {
                             Text(item.title)
-                                .foregroundColor(item == selectedOption ? .black : .gray)
+                                .foregroundColor(item == currentOption ? .black : .gray)
                             
                             //움직이는 바
-                            if selectedOption == item {
+                            if currentOption == item {
                                 Capsule()
                                     .fill(.black)
                                     .matchedGeometryEffect(id: "item", in: animation) //메뉴바 밑의 선 자연스럽게 이동
@@ -44,15 +45,19 @@ struct MenuOptionsList: View {
                             }
                         }
                     }
+                    //스크롤하면 메뉴바가 바뀝니다.
+                    .onChange(of: currentOption) { _ in
+                        proxy.scrollTo(currentOption, anchor: .topTrailing)
+                    }
                 }
             }
         }
     }
 }
 
-struct MenuOptionsList_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuOptionsList(selectedOption: .constant(.american))
-        //셀렉티드 옵션 기본값이 재패니스. 셀렉티브 옵션값에 따라 보이는게 바뀐다.
-    }
-}
+//struct MenuOptionsList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MenuOptionsList(selectedOption: .constant(.american))
+//        //셀렉티드 옵션 기본값이 재패니스. 셀렉티브 옵션값에 따라 보이는게 바뀐다.
+//    }
+//}

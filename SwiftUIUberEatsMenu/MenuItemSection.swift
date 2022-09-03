@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MenuItemSection: View {
     let option: MenuBarOptions
+    @Binding var currentOption: MenuBarOptions
     
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
@@ -46,11 +47,12 @@ struct MenuItemSection: View {
             
             
         }
+        .modifier(OffsetModifier(option: option, currentOption: $currentOption)) //스크롤하면 메뉴바도 같이 이동
     }
 }
 
-struct MenuItemSection_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuItemSection(option: .japanese)
-    }
-}
+//struct MenuItemSection_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MenuItemSection(option: .japanese)
+//    }
+//}

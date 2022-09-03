@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedOption: MenuBarOptions = .japanese
+    @State private var currentOption: MenuBarOptions = .japanese
+    
+    // 옵션 프로퍼티가 두개 인 이유. 셀렉티드옵션은 메뉴바에서 탭했을 때, 커렌트옵션은 스크롤뷰로 스크롤했을 때.
     
     var body: some View {
         VStack {
@@ -37,7 +40,7 @@ struct ContentView: View {
             .foregroundColor(.black)
             
             // menu options list
-            MenuOptionsList(selectedOption: $selectedOption)
+            MenuOptionsList(selectedOption: $selectedOption, currentOption: $currentOption)
                 .padding([.top, .horizontal])
                 .overlay(
                     Divider()
@@ -50,7 +53,7 @@ struct ContentView: View {
                 ScrollView(.vertical, showsIndicators:  false) {
                     VStack {
                         ForEach(MenuBarOptions.allCases, id: \.self) { option in
-                            MenuItemSection(option: option)
+                            MenuItemSection(option: option, currentOption: $currentOption)
                         }
                     }
                     // 메뉴 클릭하면 이동
@@ -61,8 +64,10 @@ struct ContentView: View {
                     })
                     .padding(.horizontal)
                 }
+                .coordinateSpace(name: "scroll") //오프셋모디파이어와 링크
             }
         }
+        .padding(.top)
     }
 }
 
